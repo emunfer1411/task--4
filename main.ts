@@ -5,6 +5,9 @@ basic.forever(function () {
     maqueen.motorRun(maqueen.Motors.All, maqueen.Dir.CW, Velocidad)
     if (maqueen.Ultrasonic(PingUnit.Centimeters) < 5) {
         if (obstaculo == 1) {
+            maqueen.motorStop(maqueen.Motors.All)
+            maqueen.motorRun(maqueen.Motors.M1, maqueen.Dir.CW, 0)
+            maqueen.motorStop(maqueen.Motors.All)
             obstaculo = 2
         }
         if (obstaculo == 2) {
